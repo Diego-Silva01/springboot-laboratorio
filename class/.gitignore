@@ -1,3 +1,2094 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Diego Silva\Downloads\class> git init
+Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/.git/
+PS C:\Users\Diego Silva\Downloads\class> git add .
+warning: in the working copy of 'class/.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/.mvn/wrapper/maven-wrapper.properties', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/mvnw.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/src/main/java/com/example/demo/ClassApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'class/src/test/java/com/example/demo/ClassApplicationTests.java', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\Diego Silva\Downloads\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+[master (root-commit) 9aa687f] feat: create author CRUD with Spring Boot and PostgreSQL
+ 21 files changed, 797 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/class.iml
+ create mode 100644 .idea/compiler.xml
+ create mode 100644 .idea/encodings.xml
+ create mode 100644 .idea/jarRepositories.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 class/.gitattributes
+ create mode 100644 class/.gitignore
+ create mode 100644 class/.mvn/wrapper/maven-wrapper.properties
+ create mode 100644 class/mvnw
+ create mode 100644 class/mvnw.cmd
+ create mode 100644 class/pom.xml
+ create mode 100644 class/src/main/java/com/Controller.java
+ create mode 100644 class/src/main/java/com/example/demo/ClassApplication.java
+ create mode 100644 class/src/main/java/com/example/demo/controller/AutorController.java
+ create mode 100644 class/src/main/java/com/example/demo/entidys/Autor.java
+ create mode 100644 class/src/main/java/com/example/demo/repository/AutorRepository.java
+ create mode 100644 class/src/main/java/com/example/demo/service/AutorService.java
+ create mode 100644 class/src/main/resources/application.properties
+ create mode 100644 class/src/test/java/com/example/demo/ClassApplicationTests.java
+PS C:\Users\Diego Silva\Downloads\class> .gitignore
+.gitignore : The term '.gitignore' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ .gitignore
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem
+
+
+    Directory: C:\Users\Diego Silva\Downloads\class
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         8/11/2026  11:17 AM                .idea
+d-----         8/11/2026  10:44 AM                class
+d-----         8/11/2026  10:44 AM                target
+
+
+PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem .\class
+
+
+    Directory: C:\Users\Diego Silva\Downloads\class\class
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          8/5/2026  10:54 AM                .mvn
+d-----          8/5/2026  10:54 AM                src
+d-----         8/11/2026  10:44 AM                target
+-a----          8/5/2026  10:54 AM             38 .gitattributes
+-a----          8/5/2026  10:54 AM            394 .gitignore
+-a----          8/5/2026  10:54 AM           1806 HELP.md
+-a----          8/5/2026  10:54 AM          11790 mvnw                                                                                                                             
+-a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+-a----         8/11/2026  10:44 AM           2101 pom.xml
+
+
+PS C:\Users\Diego Silva\Downloads\class>
+PS C:\Users\Diego Silva\Downloads\class> cd .\class   
+PS C:\Users\Diego Silva\Downloads\class\class> Get-ChildItem
+
+
+    Directory: C:\Users\Diego Silva\Downloads\class\class
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          8/5/2026  10:54 AM                .mvn
+d-----          8/5/2026  10:54 AM                src
+d-----         8/11/2026  10:44 AM                target
+-a----          8/5/2026  10:54 AM             38 .gitattributes
+-a----          8/5/2026  10:54 AM            394 .gitignore
+-a----          8/5/2026  10:54 AM           1806 HELP.md
+-a----          8/5/2026  10:54 AM          11790 mvnw
+-a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+-a----         8/11/2026  10:44 AM           2101 pom.xml                                                                                                                          
+
+
+PS C:\Users\Diego Silva\Downloads\class\class> git init
+Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+PS C:\Users\Diego Silva\Downloads\class\class> git init
+Reinitialized existing Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+PS C:\Users\Diego Silva\Downloads\class\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitattributes
+        .gitignore
+        .mvn/
+        mvnw
+        mvnw.cmd
+        pom.xml
+        src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Diego Silva\Downloads\class\class> Windows PowerShell
+Windows : The term 'Windows' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Windows PowerShell
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Windows:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> Copyright (C) Microsoft Corporation. All rights reserved.
+C : The term 'C' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:12
++ Copyright (C) Microsoft Corporation. All rights reserved.
++            ~
+    + CategoryInfo          : ObjectNotFound: (C:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/.git/
+Initialized : The term 'Initialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Initialized empty Git repository in C:/Users/Diego Silva/Downloads/cl ...
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git add .
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git add .
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.gitattributes', LF will be re ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.gitignore', LF will be replac ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.mvn/wrapper/maven-wrapper.properties', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.mvn/wrapper/maven-wrapper.pro ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/mvnw.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/mvnw.cmd', LF will be replaced ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/pom.xml', LF will be replaced  ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/main/java/com/example/demo/ClassApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/main/java/com/example/demo ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/main/resources/application ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/test/java/com/example/demo/ClassApplicationTests.java', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/test/java/com/example/demo ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git commit -m "feat: create  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> [master (root-commit) 9aa687f] feat: create author CRUD with Spring Boot and PostgreSQL
+At line:1 char:10
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++          ~
+Missing closing ')' in expression.
+At line:1 char:1
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++ ~~~~~~~~~
+Unexpected attribute 'master'.
+At line:1 char:14
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++              ~~~~~~~
+Unexpected token '-commit' in expression or statement.
+At line:1 char:21
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++                     ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInExpression
+
+PS C:\Users\Diego Silva\Downloads\class\class>  21 files changed, 797 insertions(+)
+At line:1 char:5
++  21 files changed, 797 insertions(+)
++     ~~~~~
+Unexpected token 'files' in expression or statement.
+At line:1 char:36
++  21 files changed, 797 insertions(+)
++                                    ~
+Missing expression after unary operator '+'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/.gitignore
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/.gitignore
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/class.iml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/class.iml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/compiler.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/compiler.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/encodings.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/encodings.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/jarRepositories.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/jarRepositories.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/misc.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/misc.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/modules.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/modules.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.gitattributes
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.gitattributes
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.gitignore
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.gitignore
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.mvn/wrapper/maven-wrapper.properties
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.mvn/wrapper/maven-wrapper.properties
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/mvnw
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/mvnw
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/mvnw.cmd
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/mvnw.cmd
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/pom.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/pom.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/Controller.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/Controller.java
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/ClassApplication.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/ClassApplica ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/controller/AutorController.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/controller/A ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/entidys/Autor.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/entidys/Auto ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/repository/AutorRepository.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/repository/A ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/service/AutorService.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/service/Auto ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/resources/application.properties
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/resources/application.properties
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/test/java/com/example/demo/ClassApplicationTests.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/test/java/com/example/demo/ClassApplica ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> .gitignore
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> .gitignore
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> .gitignore : The term '.gitignore' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+PS C:\Users\Diego Silva\Downloads\class\class> included, verify that the path is correct and try again.
+At line:1 char:9
++ included, verify that the path is correct and try again.
++         ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\Diego Silva\Downloads\class\class> At line:1 char:1
+The AT command has been deprecated. Please use schtasks.exe instead.
+
+Invalid command.
+
+The AT command schedules commands and programs to run on a computer at
+a specified time and date. The Schedule service must be running to use
+the AT command.
+
+AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]
+AT [\\computername] time [/INTERACTIVE]
+    [ /EVERY:date[,...] | /NEXT:date[,...]] "command"
+
+\\computername     Specifies a remote computer. Commands are scheduled on the
+                   local computer if this parameter is omitted.
+id                 Is an identification number assigned to a scheduled
+                   command.
+/delete            Cancels a scheduled command. If id is omitted, all the
+                   scheduled commands on the computer are canceled.
+/yes               Used with cancel all jobs command when no further
+                   confirmation is desired.
+time               Specifies the time when command is to run.
+/interactive       Allows the job to interact with the desktop of the user
+                   who is logged on at the time the job runs.
+/every:date[,...]  Runs the command on each specified day(s) of the week or
+                   month. If date is omitted, the current day of the month
+                   is assumed.
+/next:date[,...]   Runs the specified command on the next occurrence of the
+                   day (for example, next Thursday).  If date is omitted, the
+                   current day of the month is assumed.
+"command"          Is the Windows NT command, or batch program to be run.
+
+PS C:\Users\Diego Silva\Downloads\class\class> + .gitignore
+At line:1 char:2
++ + .gitignore
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + .gitignore
++   ~~~~~~~~~~
+Unexpected token '.gitignore' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> + ~~~~~~~~~~
+
+At line:1 char:2
++ + ~~~~~~~~~~
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + ~~~~~~~~~~
++   ~~~~~~~~~~
+Unexpected token '~~~~~~~~~~' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+ 
+PS C:\Users\Diego Silva\Downloads\class\class>     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], CommandNotFoundException
+At line:1 char:6
++     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], ...
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], ...
++       ~~~~~~~~~~~~
+Unexpected token 'CategoryInfo' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class>     + FullyQualifiedErrorId : CommandNotFoundException
+At line:1 char:6
++     + FullyQualifiedErrorId : CommandNotFoundException
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + FullyQualifiedErrorId : CommandNotFoundException
++       ~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'FullyQualifiedErrorId' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----         8/11/2026  11:17 AM                .idea
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----         8/11/2026  11:17 AM                .idea
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                class
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                class
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem .\class
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem .\class
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----          8/5/2026  10:54 AM                .mvn
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----          8/5/2026  10:54 AM                .mvn
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----          8/5/2026  10:54 AM                src
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----          8/5/2026  10:54 AM                src
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM             38 .gitattributes
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM             38 .gitattributes
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM            394 .gitignore
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM            394 .gitignore
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           1806 HELP.md
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           1806 HELP.md
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM          11790 mvnw                                                                               
+
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM          11790 mvnw
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----         8/11/2026  10:44 AM           2101 pom.xml
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----         8/11/2026  10:44 AM           2101 pom.xml
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class>
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class>
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> cd .\class
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> cd .\class
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> Get-ChildItem
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> Get-ChildItem
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----          8/5/2026  10:54 AM                .mvn
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----          8/5/2026  10:54 AM                .mvn
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----          8/5/2026  10:54 AM                src
+[main 2026-08-11T14:20:25.127Z] StorageMainService: creating application shared storage
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,        
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----          8/5/2026  10:54 AM                src
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM             38 .gitattributes
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM             38 .gitattributes
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM            394 .gitignore
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM            394 .gitignore
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           1806 HELP.md
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           1806 HELP.md
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM          11790 mvnw
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM          11790 mvnw
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> [main 2026-08-11T14:20:25.533Z] [shared storage] Creating shared storage database at 'c:\Users\Diego Silva\.vscode-shared\sharedStorage\state.vscdb' (wasCreated: false)
+[main 2026-08-11T14:20:25.536Z] [shared storage] Initializing fallback application storage (path: c:\Users\Diego Silva\AppData\Roaming\Code\User\globalStorage\state.vscdb)
+                                               -a----         8/11/2026  10:44 AM           2101 pom.xml                                                                            
+
+[main 2026-08-11T14:20:25.628Z] [shared storage] Fallback application storage initialized with 147 items
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,        
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----         8/11/2026  10:44 AM           2101 pom.xml
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> [main 2026-08-11T14:20:25.649Z] update#setState idle
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+Initialized : The term 'Initialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Initialized empty Git repository in C:/Users/Diego Silva/Downloads/cl ...
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Reinitialized existing Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+Reinitialized : The term 'Reinitialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Reinitialized existing Git repository in C:/Users/Diego Silva/Downloa ...
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Reinitialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git commit -m "feat: c ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> On branch master
+On : The term 'On' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:1
++ On branch master
++ ~~
+    + CategoryInfo          : ObjectNotFound: (On:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Initial commit
+Initial : The term 'Initial' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Initial commit
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initial:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Untracked files:
+Untracked : The term 'Untracked' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Untracked files:
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Untracked:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>   (use "git add <file>..." to include in what will be committed)
+use : The term 'use' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:4
++   (use "git add <file>..." to include in what will be committed)
++    ~~~
+    + CategoryInfo          : ObjectNotFound: (use:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>         .gitattributes
+PS C:\Users\Diego Silva\Downloads\class\class>         .gitignore
+
+PS C:\Users\Diego Silva\Downloads\class\class>         .mvn/
+
+.mvn/ : The term '.mvn/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         .mvn/
++         ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.mvn/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>         mvnw
+mvnw : The term 'mvnw' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         mvnw
++         ~~~~
+    + CategoryInfo          : ObjectNotFound: (mvnw:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command mvnw was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\mvnw". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         mvnw.cmd
+mvnw.cmd : The term 'mvnw.cmd' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:9
++         mvnw.cmd
++         ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mvnw.cmd:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command mvnw.cmd was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\mvnw.cmd". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         pom.xml
+pom.xml : The term 'pom.xml' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:9
++         pom.xml
++         ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (pom.xml:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+Suggestion [3,General]: The command pom.xml was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\pom.xml". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         src/
+src/ : The term 'src/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         src/
++         ~~~~
+    + CategoryInfo          : ObjectNotFound: (src/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> nothing added to commit but untracked files present (use "git add" to track)
+use : The term 'use' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:54
++ nothing added to commit but untracked files present (use "git add" to ...
++                                                      ~~~
+    + CategoryInfo          : ObjectNotFound: (use:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class>
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class>
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> (node:20852) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+[main 2026-08-11T14:20:33.408Z] Extension host with pid 19340 exited with code: 0, signal: unknown.
+                                               ^C
+PS C:\Users\Diego Silva\Downloads\class\class> Windows PowerShell
+Windows : The term 'Windows' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Windows PowerShell
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Windows:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> Copyright (C) Microsoft Corporation. All rights reserved.
+C : The term 'C' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:12
++ Copyright (C) Microsoft Corporation. All rights reserved.
++            ~
+    + CategoryInfo          : ObjectNotFound: (C:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/.git/
+Initialized : The term 'Initialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Initialized empty Git repository in C:/Users/Diego Silva/Downloads/cl ...
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git add .
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git add .
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.gitattributes', LF will be re ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.gitignore', LF will be replac ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/.mvn/wrapper/maven-wrapper.properties', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/.mvn/wrapper/maven-wrapper.pro ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/mvnw.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/mvnw.cmd', LF will be replaced ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/pom.xml', LF will be replaced  ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/main/java/com/example/demo/ClassApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/main/java/com/example/demo ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/main/resources/application ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> warning: in the working copy of 'class/src/test/java/com/example/demo/ClassApplicationTests.java', LF will be replaced by CRLF the next time Git touches it
+warning: : The term 'warning:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ warning: in the working copy of 'class/src/test/java/com/example/demo ...
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (warning::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> git commit -m "feat: create  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> [master (root-commit) 9aa687f] feat: create author CRUD with Spring Boot and PostgreSQL
+At line:1 char:10
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++          ~
+Missing closing ')' in expression.
+At line:1 char:1
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++ ~~~~~~~~~
+Unexpected attribute 'master'.
+At line:1 char:14
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++              ~~~~~~~
+Unexpected token '-commit' in expression or statement.
+At line:1 char:21
++ [master (root-commit) 9aa687f] feat: create author CRUD with Spring B ...
++                     ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInExpression
+
+PS C:\Users\Diego Silva\Downloads\class\class>  21 files changed, 797 insertions(+)
+At line:1 char:5
++  21 files changed, 797 insertions(+)
++     ~~~~~
+Unexpected token 'files' in expression or statement.
+At line:1 char:36
++  21 files changed, 797 insertions(+)
++                                    ~
+Missing expression after unary operator '+'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/.gitignore
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/.gitignore
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/class.iml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/class.iml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/compiler.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/compiler.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/encodings.xml
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/jarRepositories.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/jarRepositories.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/misc.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/misc.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 .idea/modules.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 .idea/modules.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.gitattributes
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.gitattributes
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.gitignore
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.gitignore
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/.mvn/wrapper/maven-wrapper.properties
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/.mvn/wrapper/maven-wrapper.properties
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/mvnw
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/mvnw.cmd
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/mvnw.cmd
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/pom.xml
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/pom.xml
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/Controller.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/Controller.java
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/ClassApplication.java
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/controller/AutorController.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/controller/A ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/entidys/Autor.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/entidys/Auto ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/repository/AutorRepository.java
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/java/com/example/demo/service/AutorService.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/java/com/example/demo/service/Auto ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/main/resources/application.properties
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/main/resources/application.properties
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>  create mode 100644 class/src/test/java/com/example/demo/ClassApplicationTests.java
+create : The term 'create' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:2
++  create mode 100644 class/src/test/java/com/example/demo/ClassApplica ...
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (create:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> .gitignore
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> .gitignore
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> .gitignore : The term '.gitignore' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+PS C:\Users\Diego Silva\Downloads\class\class> included, verify that the path is correct and try again.
+At line:1 char:9
++ included, verify that the path is correct and try again.
++         ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\Diego Silva\Downloads\class\class> At line:1 char:1
+
+The AT command has been deprecated. Please use schtasks.exe instead.
+
+Invalid command.
+
+The AT command schedules commands and programs to run on a computer at
+a specified time and date. The Schedule service must be running to use
+the AT command.
+
+AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]
+AT [\\computername] time [/INTERACTIVE]
+    [ /EVERY:date[,...] | /NEXT:date[,...]] "command"
+
+\\computername     Specifies a remote computer. Commands are scheduled on the
+                   local computer if this parameter is omitted.
+id                 Is an identification number assigned to a scheduled
+                   command.
+/delete            Cancels a scheduled command. If id is omitted, all the
+                   scheduled commands on the computer are canceled.
+/yes               Used with cancel all jobs command when no further
+                   confirmation is desired.
+time               Specifies the time when command is to run.
+/interactive       Allows the job to interact with the desktop of the user
+                   who is logged on at the time the job runs.
+/every:date[,...]  Runs the command on each specified day(s) of the week or
+                   month. If date is omitted, the current day of the month
+                   is assumed.
+/next:date[,...]   Runs the specified command on the next occurrence of the
+                   day (for example, next Thursday).  If date is omitted, the
+                   current day of the month is assumed.
+"command"          Is the Windows NT command, or batch program to be run.
+
+PS C:\Users\Diego Silva\Downloads\class\class> + .gitignore
+At line:1 char:2
++ + .gitignore
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + .gitignore
++   ~~~~~~~~~~
+Unexpected token '.gitignore' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> + ~~~~~~~~~~
+At line:1 char:2
++ + ~~~~~~~~~~
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + ~~~~~~~~~~
++   ~~~~~~~~~~
+Unexpected token '~~~~~~~~~~' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class>     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], CommandNotFoundException
+At line:1 char:6
++     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], ...
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + CategoryInfo          : ObjectNotFound: (.gitignore:String) [], ...
++       ~~~~~~~~~~~~
+Unexpected token 'CategoryInfo' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class>     + FullyQualifiedErrorId : CommandNotFoundException
+At line:1 char:6
++     + FullyQualifiedErrorId : CommandNotFoundException
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + FullyQualifiedErrorId : CommandNotFoundException
++       ~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'FullyQualifiedErrorId' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----         8/11/2026  11:17 AM                .idea
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----         8/11/2026  11:17 AM                .idea
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                class
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                class
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem .\class
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> Get-ChildItem .\class
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----          8/5/2026  10:54 AM                .mvn
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----          8/5/2026  10:54 AM                .mvn
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----          8/5/2026  10:54 AM                src
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----          8/5/2026  10:54 AM                src
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+[main 2026-08-11T14:20:42.134Z] StorageMainService: creating application shared storage
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM             38 .gitattributes
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM             38 .gitattributes
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM            394 .gitignore
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM            394 .gitignore
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           1806 HELP.md
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           1806 HELP.md
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM          11790 mvnw                                                                               
+
+[main 2026-08-11T14:20:42.379Z] [shared storage] Creating shared storage database at 'c:\Users\Diego Silva\.vscode-shared\sharedStorage\state.vscdb' (wasCreated: false)
+[main 2026-08-11T14:20:42.381Z] [shared storage] Initializing fallback application storage (path: c:\Users\Diego Silva\AppData\Roaming\Code\User\globalStorage\state.vscdb)
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,        
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM          11790 mvnw
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+[main 2026-08-11T14:20:42.429Z] [shared storage] Fallback application storage initialized with 147 items
+[main 2026-08-11T14:20:42.440Z] update#setState idle
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,        
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----         8/11/2026  10:44 AM           2101 pom.xml
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----         8/11/2026  10:44 AM           2101 pom.xml
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class>
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class>
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class> cd .\class   
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class> cd .\class
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> Get-ChildItem
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> Get-ChildItem
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class>     Directory: C:\Users\Diego Silva\Downloads\class\class
+Directory: : The term 'Directory:' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:5
++     Directory: C:\Users\Diego Silva\Downloads\class\class
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Directory::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Mode                 LastWriteTime         Length Name
+Invalid parameter - LastWriteTime
+PS C:\Users\Diego Silva\Downloads\class\class> ----                 -------------         ------ ----
+>> d-----          8/5/2026  10:54 AM                .mvn
+At line:1 char:55
++ ----                 -------------         ------ ----
++                                                       ~
+Missing expression after unary operator '--'.
+At line:2 char:1
++ d-----          8/5/2026  10:54 AM                .mvn
++ ~~~~~~
+Unexpected token 'd-----' in expression or statement.
+At line:1 char:3
++ ----                 -------------         ------ ----
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:22
++ ----                 -------------         ------ ----
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:24
++ ----                 -------------         ------ ----
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:26
++ ----                 -------------         ------ ----
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:28
++ ----                 -------------         ------ ----
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:30
++ ----                 -------------         ------ ----
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:32
++ ----                 -------------         ------ ----
++                                ~~~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+At line:1 char:34
++ ----                 -------------         ------ ----
++                                  ~~~~~~~~~~~~~~~~~~~~~
+The '--' operator works only on variables or on properties.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----          8/5/2026  10:54 AM                src
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----          8/5/2026  10:54 AM                src
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> d-----         8/11/2026  10:44 AM                target
+d----- : The term 'd-----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ d-----         8/11/2026  10:44 AM                target
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (d-----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM             38 .gitattributes
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM             38 .gitattributes
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM            394 .gitignore
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM            394 .gitignore
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           1806 HELP.md
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           1806 HELP.md
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM          11790 mvnw
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM          11790 mvnw
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----          8/5/2026  10:54 AM           8292 mvnw.cmd
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> -a----         8/11/2026  10:44 AM           2101 pom.xml                                                                            
+
+-a---- : The term '-a----' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ -a----         8/11/2026  10:44 AM           2101 pom.xml
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-a----:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Initialized empty Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+Initialized : The term 'Initialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Initialized empty Git repository in C:/Users/Diego Silva/Downloads/cl ...
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git init
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git init
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> Reinitialized existing Git repository in C:/Users/Diego Silva/Downloads/class/class/.git/
+Reinitialized : The term 'Reinitialized' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Reinitialized existing Git repository in C:/Users/Diego Silva/Downloa ...
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Reinitialized:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class> git commit -m "feat: create author CRUD with Spring Boot and PostgreSQL"
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class> git commit -m "feat: c ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class> On branch master
+On : The term 'On' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:1
++ On branch master
++ ~~
+    + CategoryInfo          : ObjectNotFound: (On:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Initial commit
+Initial : The term 'Initial' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Initial commit
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Initial:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> Untracked files:
+Untracked : The term 'Untracked' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:1
++ Untracked files:
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Untracked:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>   (use "git add <file>..." to include in what will be committed)
+use : The term 'use' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:4
++   (use "git add <file>..." to include in what will be committed)
++    ~~~
+    + CategoryInfo          : ObjectNotFound: (use:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>         .gitattributes
+PS C:\Users\Diego Silva\Downloads\class\class>         .gitignore
+
+PS C:\Users\Diego Silva\Downloads\class\class>         .mvn/
+
+.mvn/ : The term '.mvn/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         .mvn/
++         ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.mvn/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class>         mvnw
+mvnw : The term 'mvnw' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         mvnw
++         ~~~~
+    + CategoryInfo          : ObjectNotFound: (mvnw:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command mvnw was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\mvnw". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         mvnw.cmd
+mvnw.cmd : The term 'mvnw.cmd' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:9
++         mvnw.cmd
++         ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (mvnw.cmd:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command mvnw.cmd was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\mvnw.cmd". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         pom.xml
+pom.xml : The term 'pom.xml' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+verify that the path is correct and try again.
+At line:1 char:9
++         pom.xml
++         ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (pom.xml:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command pom.xml was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\pom.xml". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\Diego Silva\Downloads\class\class>         src/
+src/ : The term 'src/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:9
++         src/
++         ~~~~
+    + CategoryInfo          : ObjectNotFound: (src/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class> nothing added to commit but untracked files present (use "git add" to track)
+use : The term 'use' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that 
+the path is correct and try again.
+At line:1 char:54
++ nothing added to commit but untracked files present (use "git add" to ...
++                                                      ~~~
+    + CategoryInfo          : ObjectNotFound: (use:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Diego Silva\Downloads\class\class> PS C:\Users\Diego Silva\Downloads\class\class>
+(node:16136) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+Get-Process : A positional parameter cannot be found that accepts argument 'Silva\Downloads\class\class>'.
+At line:1 char:1
++ PS C:\Users\Diego Silva\Downloads\class\class>
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Process], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetProcessCommand
+
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class> 
+PS C:\Users\Diego Silva\Downloads\class\class>
+PS C:\Users\Diego Silva\Downloads\class\class>
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
