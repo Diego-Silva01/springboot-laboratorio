@@ -5,21 +5,32 @@ import com.example.demo.repository.AutorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AutorService {
     private final AutorRepository autorRepository;
 
-    public AutorService(AutorRepository autorRepository){
+    public AutorService(AutorRepository autorRepository) {
         this.autorRepository = autorRepository;
     }
 
-    public Autor salvar(Autor autor){
+    public Autor salvar(Autor autor) {
         Autor salvo = autorRepository.save(autor);
         return salvo;
     }
-    public List<Autor> buscar(){
+
+    public List<Autor> buscar() {
         return autorRepository.findAll();
+    }
+
+    public Autor buscarPorId(Long id) {
+        return autorRepository.findById(id)
+                .orElseThrow();
+    }
+
+
+
     }
 }
 

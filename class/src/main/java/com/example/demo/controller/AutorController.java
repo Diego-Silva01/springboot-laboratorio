@@ -2,10 +2,7 @@
 
         import com.example.demo.entidys.Autor;
         import com.example.demo.service.AutorService;
-        import org.springframework.web.bind.annotation.GetMapping;
-        import org.springframework.web.bind.annotation.PostMapping;
-        import org.springframework.web.bind.annotation.RequestBody;
-        import org.springframework.web.bind.annotation.RestController;
+        import org.springframework.web.bind.annotation.*;
 
         import java.util.List;
 
@@ -24,4 +21,13 @@
             public List<Autor> buscar(){
               return autorService.buscar();
             }
+            @GetMapping("/autor/{id}/")
+        public Autor autor(@PathVariable Long id){
+               return autorService.buscarPorId(id);
+            }
+            @PutMapping("/autor/{id}/")
+        public Autor updateAutor(@PathVariable Long id, @RequestBody Autor autor){
+               return autorService.updteAutor(autor, id);
+            }
+
         }
