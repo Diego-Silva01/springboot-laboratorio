@@ -21,13 +21,19 @@
             public List<Autor> buscar(){
               return autorService.buscar();
             }
-            @GetMapping("/autor/{id}/")
-        public Autor autor(@PathVariable Long id){
+            @GetMapping("/autor/{id}")
+        public Autor buscarPorId(@PathVariable Long id){
                return autorService.buscarPorId(id);
             }
-            @PutMapping("/autor/{id}/")
+            @PutMapping("/autor/{id}")
         public Autor updateAutor(@PathVariable Long id, @RequestBody Autor autor){
-               return autorService.updteAutor(autor, id);
+               return autorService.updateAutor(autor, id);
+            }
+            @DeleteMapping("/autor/{id}")
+        public void deleteAutor(@PathVariable Long id){
+               autorService.deleteAutor(id);
+
             }
 
         }
+

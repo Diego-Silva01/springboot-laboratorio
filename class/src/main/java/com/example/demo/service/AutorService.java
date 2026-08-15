@@ -29,8 +29,18 @@ public class AutorService {
                 .orElseThrow();
     }
 
+public Autor updateAutor(Autor autor, Long id) {
+    Autor autorExistente = autorRepository.findById(id)
+            .orElseThrow();
+    autorExistente.setNome(autor.getNome());
+    return autorRepository.save(autorExistente);
+}
+public void deleteAutor(Long id){
+Autor autorExist = autorRepository.findById(id).orElseThrow();
+       autorRepository.deleteById(id);
 
+}
 
     }
-}
+
 
