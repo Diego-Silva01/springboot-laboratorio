@@ -1,5 +1,6 @@
         package com.example.demo.controller;
 
+        import com.example.demo.dtos.AutorDTO;
         import com.example.demo.entidys.Autor;
         import com.example.demo.service.AutorService;
         import org.springframework.web.bind.annotation.*;
@@ -13,8 +14,8 @@
                 this.autorService = autorService;
             }
             @PostMapping("/autor")
-            public Autor salvar(@RequestBody Autor autor){
-               return autorService.salvar(autor);
+            public Autor salvar(@RequestBody AutorDTO autorDTO){
+               return autorService.salvar(autorDTO);
             }
 
             @GetMapping("/buscar")

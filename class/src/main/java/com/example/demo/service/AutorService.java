@@ -1,11 +1,11 @@
 package com.example.demo.service;
 
+import com.example.demo.dtos.AutorDTO;
 import com.example.demo.entidys.Autor;
 import com.example.demo.repository.AutorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AutorService {
@@ -15,9 +15,13 @@ public class AutorService {
         this.autorRepository = autorRepository;
     }
 
-    public Autor salvar(Autor autor) {
+    public AutorDTO salvar(AutorDTO autorDTO) {
+        Autor autor = new Autor();
+        autor.setNome(autorDTO.getNome());
         Autor salvo = autorRepository.save(autor);
-        return salvo;
+        AutorDTO resposta = new AutorDTO; ;
+        resposta.setNome(salvo.getNome());
+        return resposta;
     }
 
     public List<Autor> buscar() {
