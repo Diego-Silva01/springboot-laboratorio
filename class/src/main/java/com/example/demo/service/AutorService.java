@@ -5,6 +5,8 @@ import com.example.demo.entidys.Autor;
 import com.example.demo.repository.AutorRepository;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,14 +20,25 @@ public class AutorService {
     public AutorDTO salvar(AutorDTO autorDTO) {
         Autor autor = new Autor();
         autor.setNome(autorDTO.getNome());
+
         Autor salvo = autorRepository.save(autor);
-        AutorDTO resposta = new AutorDTO; ;
+        AutorDTO resposta = new AutorDTO();
         resposta.setNome(salvo.getNome());
+        resposta.setId(salvo.getId());
         return resposta;
     }
 
-    public List<Autor> buscar() {
-        return autorRepository.findAll();
+    public List<AutorDTO> buscar() {
+       List<Autor> autores = autorRepository.findAll();
+        List<AutorDTO> autoresDTO = new ArrayList<>();
+        for (Autor autor : autores){
+            AutorDTO dto = new AutorDTO();
+            dto.setId(autor.getId());
+            dto.setNome(autor.getNome());
+            autoresDTO.add(dto);
+            autoresDTO.add(dto);
+
+        }
     }
 
     public Autor buscarPorId(Long id) {

@@ -14,7 +14,7 @@
                 this.autorService = autorService;
             }
             @PostMapping("/autor")
-            public Autor salvar(@RequestBody AutorDTO autorDTO){
+            public AutorDTO salvar(@RequestBody AutorDTO autorDTO){
                return autorService.salvar(autorDTO);
             }
 
