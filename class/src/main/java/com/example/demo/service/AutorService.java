@@ -29,28 +29,39 @@ public class AutorService {
     }
 
     public List<AutorDTO> buscar() {
-       List<Autor> autores = autorRepository.findAll();
-        List<AutorDTO> autoresDTO = new ArrayList<>();
-        for (Autor autor : autores){
-            AutorDTO dto = new AutorDTO();
-            dto.setId(autor.getId());
-            dto.setNome(autor.getNome());
-            autoresDTO.add(dto);
-            autoresDTO.add(dto);
+      List<Autor> autoresCadastrado = autorRepository.findAll();
+      List<AutorDTO> autorDTOS = new ArrayList<>();
+      for (Autor autor:autoresCadastrado){
+          AutorDTO dto = new AutorDTO();
+          dto.setNome(autor.getNome());
+          dto.setId(autor.getId());
+          autorDTOS.add(dto);
 
-        }
+      }
+        return autorDTOS;
     }
 
-    public Autor buscarPorId(Long id) {
-        return autorRepository.findById(id)
-                .orElseThrow();
+
+
+    public AutorDTO buscarPorId(Long id) {
+        Autor autor = autorRepository.findById(id)
+                .orElseThrow(()  -> new RuntimeException("Não encontrado"));
+        AutorDTO autorDTO = new AutorDTO();
+        autorDTO.setNome(autor.getNome());
+        autorDTO.setId(autor.getId());
+        return autorDTO;
+
     }
 
-public Autor updateAutor(Autor autor, Long id) {
-    Autor autorExistente = autorRepository.findById(id)
-            .orElseThrow();
-    autorExistente.setNome(autor.getNome());
-    return autorRepository.save(autorExistente);
+public AutorDTO updateAutor(Long id, AutorDTO autorDTO) {
+        Autor autorexiteste = autorRepository.findById(id).orElseThrow();
+        autorexiteste.setNome(autorDTO.getNome());
+        Autor autor = autorRepository.save(autorexiteste);
+        AutorDTO salvo = new AutorDTO();
+        salvo.setNome(autor.getNome());
+        salvo.setId(autor.getId());
+       return salvo;
+
 }
 public void deleteAutor(Long id){
 Autor autorExist = autorRepository.findById(id).orElseThrow();
