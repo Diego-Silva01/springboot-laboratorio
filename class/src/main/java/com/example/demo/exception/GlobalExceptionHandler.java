@@ -8,3 +8,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(AutorNaoEncontradoException.class)
+public ResponseEntity<String>resposta(AutorNaoEncontradoException mensagem){
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem.getMessage());
+    }
+    @ExceptionHandler(AutorJaCadastradoException.class)
+    public ResponseEntity<String> resposta(AutorJaCadastradoException mensagem){
+        return ResponseEntity.status(HttpStatus.FOUND).body(mensagem.getMessage());
+    }
+}

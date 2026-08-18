@@ -21,7 +21,11 @@ public class AutorService {
     public AutorDTO salvar(AutorDTO autorDTO) {
         Autor autor = new Autor();
         autor.setNome(autorDTO.getNome());
+        if (autorRepository.existsByNome(autor.getNome())){
+            throw new AutorJaCadastradoException("Autor ja cadastrado");
 
+
+        }
         Autor salvo = autorRepository.save(autor);
         AutorDTO resposta = new AutorDTO();
         resposta.setNome(salvo.getNome());
@@ -52,16 +56,19 @@ public class AutorService {
     }
 
 public AutorDTO updateAutor(Long id, AutorDTO autorDTO) {
-        Autor autorexiteste = autorRepository.findById(id).orElseThrow(()-> new AutorJaCadastradoException("Ester autor não existe!"));
+        Autor autorexiteste = autorRepository.findById(id).orElseThrow(()-> new AutorNaoEncontradoException("Ester autor não existe!"));
+    if (autorRepository.existsByNomeAndIdNot(autorDTO.getNome(),autorexiteste.getId())){
+        throw new AutorJaCadastradoException("Autor ja cadastrado");
+    }
         autorexiteste.setNome(autorDTO.getNome());
-        Autor autor = autorRepository.save(autorexiteste);
-        AutorDTO salvo = new AutorDTO();
-        salvo.setNome(autor.getNome());
-        salvo.setId(autor.getId());
+    Autor autor = autorRepository.save(autorexiteste);
+    AutorDTO salvo = new AutorDTO();
+    salvo.setNome(autor.getNome());
+    salvo.setId(autor.getId());
        return salvo;
 }
 public void deleteAutor(Long id){
-Autor autorExist = autorRepository.findById(id).orElseThrow();
+Autor autorExist = autorRepository.findById(id).orElseThrow(()-> new AutorNaoEncontradoException("Autor não encontrado, impossivel deleta-lo!"));
        autorRepository.deleteById(id);
 
 }
