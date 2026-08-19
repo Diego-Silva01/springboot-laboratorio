@@ -5,6 +5,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 public class AutorDTO {
+    @NotBlank
     private String nome;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

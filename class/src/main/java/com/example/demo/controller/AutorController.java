@@ -1,5 +1,5 @@
         package com.example.demo.controller;
-
+        import jakarta.validation.Valid;
         import com.example.demo.dtos.AutorDTO;
         import com.example.demo.entidys.Autor;
         import com.example.demo.service.AutorService;
@@ -14,7 +14,7 @@
                 this.autorService = autorService;
             }
             @PostMapping("/autor")
-            public AutorDTO salvar(@RequestBody AutorDTO autorDTO){
+            public AutorDTO salvar(@RequestBody @Valid AutorDTO autorDTO){
                return autorService.salvar(autorDTO);
             }
 
@@ -27,7 +27,7 @@
                return autorService.buscarPorId(id);
             }
             @PutMapping("/autor/{id}")
-        public AutorDTO updateAutor(@PathVariable Long id, @RequestBody AutorDTO autorDTO){
+        public AutorDTO updateAutor(@PathVariable Long id, @RequestBody @Valid AutorDTO autorDTO){
                return autorService.updateAutor(id, autorDTO);
             }
             @DeleteMapping("/autor/{id}")

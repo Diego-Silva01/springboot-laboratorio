@@ -56,7 +56,7 @@ public class AutorService {
     }
 
 public AutorDTO updateAutor(Long id, AutorDTO autorDTO) {
-        Autor autorexiteste = autorRepository.findById(id).orElseThrow(()-> new AutorNaoEncontradoException("Ester autor não existe!"));
+        Autor autorexiteste = autorRepository.findById(id).orElseThrow(()-> new AutorNaoEncontradoException("Este autor não existe!"));
     if (autorRepository.existsByNomeAndIdNot(autorDTO.getNome(),autorexiteste.getId())){
         throw new AutorJaCadastradoException("Autor ja cadastrado");
     }
