@@ -3,12 +3,12 @@ package com.example.demo.dtos;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 public class AutorDTO {
-    @NotBlank
+    @NotBlank(message = "O nome e obrigatorio")
     private String nome;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
     public String getNome() {
